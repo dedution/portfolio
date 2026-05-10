@@ -2,1044 +2,1069 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fábio Barbosa, Game Developer at FABAMAQ in Portugal, focused on game development, programming, tools, pipelines, shaders, and interactive systems.">
+  <meta name="author" content="Fábio Barbosa">
+  <title>Fábio Barbosa | Game Developer Portfolio</title>
+  <style>
+    :root {
+      --ink: #151a17;
+      --paper: #f3f6f2;
+      --paper-strong: #ffffff;
+      --muted: #647069;
+      --line: rgba(21, 26, 23, 0.14);
+      --dark: #0f1513;
+      --dark-soft: #1a211e;
+      --red: #cf493f;
+      --teal: #2d9188;
+      --gold: #c7993f;
+      --white: #ffffff;
+      --shadow: 0 18px 48px rgba(21, 26, 23, 0.14);
+    }
 
-  <title>Fabio Barbosa - Portfolio</title>
+    * {
+      box-sizing: border-box;
+    }
 
-  <!-- Custom fonts for this theme -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <!-- Theme CSS -->
-  <link href="css/freelancer.min.css" rel="stylesheet">
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
 
+    img,
+    iframe {
+      max-width: 100%;
+    }
+
+    img {
+      display: block;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      background: var(--white);
+      color: var(--ink);
+      border-radius: 6px;
+      transform: translateY(-140%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243, 246, 242, 0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner,
+    .section-inner,
+    .hero-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      min-height: 58px;
+      padding: 10px 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 8px 11px;
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 760;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(21, 26, 23, 0.08);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 82vh;
+      min-height: 82svh;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--dark);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.08) saturate(0.9);
+      opacity: 0.72;
+    }
+
+    .hero::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(10, 9, 8, 0.9), rgba(10, 9, 8, 0.54) 52%, rgba(10, 9, 8, 0.18)),
+        linear-gradient(0deg, rgba(10, 9, 8, 0.76), rgba(10, 9, 8, 0.08) 46%, rgba(10, 9, 8, 0.34));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-content: end;
+      min-height: 82vh;
+      min-height: 82svh;
+      padding: clamp(76px, 12vw, 148px) 0 46px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: #f0c46a;
+      font-size: 0.8rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(3.3rem, 9vw, 8.4rem);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .hero-lede {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1.04rem, 2.1vw, 1.42rem);
+    }
+
+    .hero-actions,
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.44);
+      outline: none;
+    }
+
+    .button.primary {
+      border-color: var(--red);
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .button.dark {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button.light {
+      border-color: var(--line);
+      background: var(--paper-strong);
+      color: var(--ink);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      width: min(880px, 100%);
+      margin-top: 42px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .stat {
+      padding: 18px 22px 0 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-size: clamp(1.26rem, 2.2vw, 2rem);
+      line-height: 1.05;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.9rem;
+    }
+
+    .section {
+      padding: clamp(58px, 8vw, 96px) 0;
+    }
+
+    .section.dark {
+      background: var(--dark);
+      color: var(--paper);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+      gap: clamp(22px, 5vw, 72px);
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 880;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dark .section-label {
+      color: #72d5ca;
+    }
+
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.1rem, 5vw, 4.9rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: clamp(1.35rem, 2.6vw, 2.25rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .dark .section-copy {
+      color: rgba(243, 246, 242, 0.72);
+    }
+
+    .feature-project {
+      display: grid;
+      grid-template-columns: minmax(0, 1.32fr) minmax(310px, 0.76fr);
+      gap: clamp(24px, 5vw, 58px);
+      align-items: center;
+      padding: 26px 0 42px;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature-media {
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(110px, 0.7fr);
+      gap: 12px;
+    }
+
+    .feature-media img,
+    .project-card img,
+    .proof-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      background: var(--dark-soft);
+    }
+
+    .feature-media img:first-child {
+      aspect-ratio: 900 / 650;
+      object-fit: contain;
+    }
+
+    .feature-media img:not(:first-child) {
+      aspect-ratio: 1 / 1;
+    }
+
+    .feature-thumbs {
+      display: grid;
+      gap: 12px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta li {
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .project-copy {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper-strong);
+      box-shadow: 0 12px 30px rgba(21, 26, 23, 0.06);
+    }
+
+    .project-card img {
+      aspect-ratio: 16 / 10;
+      border-radius: 0;
+    }
+
+    .project-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px;
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+      line-height: 1.12;
+    }
+
+    .project-card p {
+      flex: 1;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .project-card .link-row {
+      margin-top: auto;
+    }
+
+    .fabamaq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 0 0 34px;
+    }
+
+    .casino-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--paper-strong);
+      box-shadow: 0 12px 30px rgba(21, 26, 23, 0.06);
+    }
+
+    .casino-card img {
+      width: 100%;
+      aspect-ratio: 333 / 455;
+      object-fit: cover;
+      background: var(--dark-soft);
+    }
+
+    .casino-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px;
+    }
+
+    .casino-card-body p {
+      flex: 1;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .casino-card-body h3 {
+      margin-bottom: 12px;
+      font-size: 1.18rem;
+      line-height: 1.12;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 34px 0 0;
+    }
+
+    .proof-strip img {
+      aspect-ratio: 16 / 10;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .video-tile {
+      overflow: hidden;
+      border: 1px solid rgba(243, 246, 242, 0.16);
+      border-radius: 8px;
+      background: #070706;
+    }
+
+    .video-tile iframe {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+
+    .profile-section {
+      background: var(--paper-strong);
+    }
+
+    .profile-panel {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+      gap: clamp(24px, 5vw, 56px);
+      align-items: start;
+      padding: clamp(18px, 3vw, 28px) 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .portrait {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .bio {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .profile-copy h2 {
+      max-width: 760px;
+    }
+
+    .profile-copy .bio {
+      max-width: 850px;
+      margin-bottom: 24px;
+    }
+
+    .profile-snapshot {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .snapshot-item {
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .snapshot-item h3 {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 0.82rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .snapshot-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .profile-stack {
+      display: grid;
+      gap: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .profile-stack h3 {
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 0.96rem;
+      text-transform: uppercase;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-cloud span {
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .contact-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: clamp(34px, 6vw, 64px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-band h2 {
+      font-size: clamp(2.1rem, 5vw, 4.2rem);
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    footer {
+      padding: 24px 0 34px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 930px) {
+      .section-header,
+      .feature-project,
+      .profile-panel,
+      .contact-band {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid,
+      .fabamaq-grid,
+      .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-band,
+      .socials {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner,
+      .section-inner,
+      .hero-inner {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .nav-links a {
+        padding: 7px 8px;
+        font-size: 0.76rem;
+      }
+
+      .hero,
+      .hero-inner {
+        min-height: 76vh;
+        min-height: 76svh;
+      }
+
+      .hero-stats,
+      .feature-media,
+      .project-grid,
+      .fabamaq-grid,
+      .proof-strip,
+      .video-grid,
+      .profile-snapshot {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat {
+        padding-right: 0;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
-<body id="page-top">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
-            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About Me</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#resume">Résumé</a>
-                    </li>
-                </ul>
-            </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="#profile">Profile</a>
+        <a href="#work">Work</a>
+        <a href="#games">Games</a>
+        <a href="#archive">Videos</a>
+        <a href="#contact">Contact</a>
+        <a href="shared/CV_FabioBarbosa.pdf">CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <img class="hero-bg" src="img/portfolio/eb_02.jpg" alt="A tense scene from Evil Below with a lone figure in a dark environment." decoding="async" fetchpriority="high">
+    <div class="hero-inner">
+      <p class="eyebrow">Game Developer @ FABAMAQ · Porto / Barcelos · Portugal</p>
+      <h1>Fábio Barbosa</h1>
+      <p class="hero-lede">
+        I’m a developer from Portugal who loves bringing ideas to life through code and design. I build games, tools, pipelines, and playable systems across land-based casino slots, cash systems, horror exploration, multiplayer prototypes, shaders, AI, networking, and UI.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="shared/CV_FabioBarbosa.pdf">Download résumé</a>
+        <a class="button" href="https://www.linkedin.com/in/deduti0n/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button" href="https://github.com/dedution" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="hero-stats" aria-label="Career highlights">
+        <div class="stat">
+          <strong>FABAMAQ</strong>
+          <span>Game Developer since March 2023, building land-based casino slot games, cash systems, tools, and workflows.</span>
         </div>
-    </nav>
-
-    <!-- Masthead -->
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-
-            <!-- Masthead Avatar Image -->
-            <img class="masthead-avatar mb-5" src="img/avatar.JPG" alt="">
-
-            <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0">Fábio Barbosa</h1>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <!-- Masthead Subheading -->
-            <p class="masthead-subheading font-weight-light mb-0">Programmer - Game Designer</p>
-
+        <div class="stat">
+          <strong>4 PlayStation recognitions</strong>
+          <span>Game of the Year, Most Innovative Game, Best Use of PlayStation Platforms, and Accessibility for Evil Below.</span>
         </div>
-    </header>
-
-    <!-- Portfolio Section -->
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-
-            <!-- Portfolio Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Professional Projects</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <!-- Portfolio Grid Items -->
-            <div class="row">
-
-				
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModalEvilBelow">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/Thumb_placeholderHorror.jpg" alt="">
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/magiaThumbAnimated.gif" alt="">
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal_Sphere">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/projectSphere.png" alt="">
-                    </div>
-                </div>
-            </div>
+        <div class="stat">
+          <strong>Fire Raven Studios</strong>
+          <span>Game Developer from May 2021 to March 2023, including lead programming on Evil Below.</span>
         </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section profile-section" id="profile">
+      <div class="section-inner">
+        <div class="profile-panel">
+          <figure class="portrait">
+            <img src="img/profile-fabio-barbosa.jpeg" alt="Portrait of Fábio Barbosa." loading="lazy" decoding="async">
+          </figure>
+          <div class="profile-copy">
+            <p class="section-label">Profile</p>
+            <h2>Game Developer at FABAMAQ.</h2>
+            <p class="bio">
+              I bring game ideas to life through code and design. These days I focus on land-based casino slots and cash systems at FABAMAQ, while keeping a strong thread of gameplay programming, tooling, shaders, and experimental systems work.
+            </p>
+
+            <div class="profile-snapshot">
+              <section class="snapshot-item" aria-labelledby="current-heading">
+                <h3 id="current-heading">Current</h3>
+                <p>FABAMAQ, March 2023-present. Slots, cash systems, internal tools, pipelines, and workflows.</p>
+              </section>
+              <section class="snapshot-item" aria-labelledby="before-heading">
+                <h3 id="before-heading">Before</h3>
+                <p>Fire Raven Studios, magikbee, and Adamastor Studio, including lead programming on Evil Below.</p>
+              </section>
+              <section class="snapshot-item" aria-labelledby="recognition-heading">
+                <h3 id="recognition-heading">Recognitions</h3>
+                <p>Four PlayStation Talents 2020 recognitions for Evil Below, including Game of the Year.</p>
+              </section>
+            </div>
+
+            <div class="profile-stack">
+              <h3>Main stack</h3>
+              <div class="skill-cloud">
+                <span>C++</span>
+                <span>C#</span>
+                <span>Java</span>
+                <span>JavaScript</span>
+                <span>GLSL</span>
+                <span>HLSL</span>
+                <span>AWS</span>
+                <span>PlayStation</span>
+                <span>Game Development</span>
+                <span>Programming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-	<!-- Portfolio Section -->
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-
-            <!-- Portfolio Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Personal Projects</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <!-- Portfolio Grid Items -->
-            <div class="row">
-			
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal_stackMaster">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_stackmaster.jpg" alt="">
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_rise.jpg" alt="">
-                    </div>
-                </div>
-
-				<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_getalive.jpg" alt="">
-                    </div>
-                </div>
-				
-				<!--<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_sleepless.png" alt="">
-                    </div>
-                </div>-->
-				
-                <!-- Portfolio Item 3 
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_getalive.jpg" alt="">
-                    </div>
-                </div>-->
-
-                <!-- Portfolio Item 4 
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_sleepless.png" alt="">
-                    </div>
-                </div>-->
-
-				<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6_onering">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_oneRing.jpg" alt="">
-                    </div>
-                </div>
-               
-                <!--<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_ocolast.png" alt="">
-                    </div>
-                </div>-->
-                
-
-                <!-- Portfolio Item 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-search fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio/thumb_grassShader.jpg" alt="">
-                    </div>
-                </div>
-				
-
-            </div>
-            <!-- /.row -->
-
+    <section class="section" id="work">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Selected work</p>
+            <h2>Games and tools with systems at the center.</h2>
+          </div>
+          <p class="section-copy">
+            Professional releases, prototypes, experiments, and tools organized around the work itself.
+          </p>
         </div>
+
+        <div class="fabamaq-grid" aria-label="FABAMAQ land-based slot games">
+          <article class="casino-card">
+            <img src="img/portfolio/fbm_xing_fu_fortune_money_trees.png" alt="Xing Fú Fortune Money Trees FBM game thumbnail." loading="lazy" decoding="async">
+            <div class="casino-card-body">
+              <ul class="meta">
+                <li>FABAMAQ · FBM</li>
+                <li>Land-based slot</li>
+                <li>243 ways</li>
+                <li>Mexico</li>
+              </ul>
+              <h3>Xing Fú Fortune™ Money Trees</h3>
+              <p>FBM slot title built around Prosperity, Strength, and Fortune bonus features, with up to seven winning combinations and four jackpots.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://fbmgaming.com/games/Xing-Fu-Fortune-Money-Trees/119" target="_blank" rel="noopener">FBM page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="casino-card">
+            <img src="img/portfolio/fbm_lanterns_fu_intensity.png" alt="Lanterns of Fú Intensity FBM game thumbnail." loading="lazy" decoding="async">
+            <div class="casino-card-body">
+              <ul class="meta">
+                <li>FABAMAQ · FBM</li>
+                <li>Land-based slot</li>
+                <li>30 lines</li>
+                <li>50 credits</li>
+              </ul>
+              <h3>Lanterns of Fú Intensity</h3>
+              <p>FBM slot title with Radiance, Strength, and Fortune features, Buy Bonus access, free spins, wild symbols, multi-game support, and bonus jackpot play.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://fbmgaming.com/games/Lanterns-of-Fu-Intensity/134" target="_blank" rel="noopener">FBM page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="casino-card">
+            <img src="img/portfolio/fbm_lanterns_fu_harmony.png" alt="Lanterns of Fú Harmony FBM game thumbnail." loading="lazy" decoding="async">
+            <div class="casino-card-body">
+              <ul class="meta">
+                <li>FABAMAQ · FBM</li>
+                <li>Land-based slot</li>
+                <li>50 lines</li>
+                <li>75 credits</li>
+              </ul>
+              <h3>Lanterns of Fú Harmony</h3>
+              <p>FBM slot title sharing the Lanterns of Fú bonus model, where players trigger or buy access to Radiance, Strength, and Fortune feature combinations.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://fbmgaming.com/games/Lanterns-of-Fu-Harmony/142" target="_blank" rel="noopener">FBM page</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="feature-project">
+          <div class="feature-media">
+            <img src="img/portfolio/Thumb_placeholderHorror.jpg" alt="Evil Below key art." loading="lazy" decoding="async">
+            <div class="feature-thumbs" aria-label="Evil Below screenshots">
+              <img src="img/portfolio/eb_01.gif" alt="Animated gameplay moment from Evil Below." loading="lazy" decoding="async">
+              <img src="img/portfolio/eb_03.jpg" alt="Evil Below environment screenshot." loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div>
+            <ul class="meta">
+              <li>Professional</li>
+              <li>2022</li>
+              <li>Horror</li>
+              <li>PlayStation Talents</li>
+              <li>PC · PS4 · PS5</li>
+            </ul>
+            <h3>EVIL BELOW</h3>
+            <p class="project-copy">
+              Winner of four PlayStation Talents 2020 recognitions, including Game of the Year, Most Innovative Game, Best Use of PlayStation Platforms, and Accessibility. A horror game about freely exploring a dangerous world filled with terrifying creatures and tactile mechanics.
+            </p>
+            <div class="link-row">
+              <a class="button dark" href="https://store.steampowered.com/app/1444580/Evil_Below/" target="_blank" rel="noopener">Steam</a>
+              <a class="button light" href="https://www.youtube.com/watch?v=dOdB_OXy3pI" target="_blank" rel="noopener">Trailer</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid" aria-label="Project cards">
+          <article class="project-card">
+            <img src="img/portfolio/gterm_screenshot.png" alt="GTERM in-game Godot terminal console screenshot." loading="lazy" decoding="async">
+            <div class="project-card-body">
+              <ul class="meta">
+                <li>Tool</li>
+                <li>Godot</li>
+                <li>1.0.1</li>
+              </ul>
+              <h3>GTERM</h3>
+              <p>In-game developer console for Godot with popup terminal UI, custom command registration, history, suggestions, rich-text logging, and TCP remote command execution.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://github.com/dedution/gterm/" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/portfolio/magiaThumbAnimated.gif" alt="Animated Magia do Saber gameplay." loading="lazy" decoding="async">
+            <div class="project-card-body">
+              <ul class="meta">
+                <li>Professional</li>
+                <li>2020</li>
+              </ul>
+              <h3>Magia do Saber</h3>
+              <p>Multiplayer party game built as a magic quiz show where players use smartphones as controllers.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://youtu.be/pCZ0A-m65gE" target="_blank" rel="noopener">Trailer</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/portfolio/art_grassShader1.gif" alt="Animated Unity grass shader bending around a moving character." loading="lazy" decoding="async">
+            <div class="project-card-body">
+              <ul class="meta">
+                <li>Shader</li>
+                <li>Unity</li>
+              </ul>
+              <h3>Unity Grass Shader</h3>
+              <p>Vertex-bending grass shader made for dynamic character interaction in Unity scenes.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://github.com/deduti0n/Unity-Grass-Bend" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-
-<!-- Experiences Section -->
-    <section class="page-section portfolio" id="moreStuff">
-        <div class="container">
-
-            <!-- XP Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">More by me</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-			<div class="row">
-			
-			<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/dOdB_OXy3pI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-				
-				<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/yyeLjSMu1kY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-				
-			<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/ivEjubZjaX8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-			
-			    <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/pCZ0A-m65gE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/5SpAkjBjHGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                
-				<div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/7dVlCiRR7qQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-				
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/gVKbfdqizIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/dFXVFwpKA24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/y5MqY6N51MY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-				
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/VXOHV3KcniU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-				
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/L1d2FL5zOsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-			
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/x1axWFa4R9E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-				
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/Rzcc2w90_js" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/C-3zRi-C1nA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-				
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal">
-                       <iframe width="360" height="210" src="https://www.youtube.com/embed/Q-CSPGoQtEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                
-			</div>
+    <section class="section" id="games">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Game projects</p>
+            <h2>Personal games and prototypes.</h2>
+          </div>
+          <p class="section-copy">
+            Older playable experiments kept together: RPG combat, co-op horror, jam prototypes, and the rough edges where systems start becoming games.
+          </p>
         </div>
+
+        <div class="project-grid" aria-label="Personal game project cards">
+          <article class="project-card">
+            <img src="img/portfolio/thumb_rise.jpg" alt="Rise of The Fey fantasy action RPG thumbnail." loading="lazy" decoding="async">
+            <div class="project-card-body">
+              <ul class="meta">
+                <li>Personal</li>
+                <li>2017</li>
+              </ul>
+              <h3>Rise of The Fey</h3>
+              <p>Third-person action-adventure RPG set in Perrah, a fantasy world created during the Digital Game Design degree.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://www.youtube.com/watch?v=e4MO8QDNJP4" target="_blank" rel="noopener">YouTube</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/portfolio/thumb_getalive.jpg" alt="Get Alive horror co-op game thumbnail." loading="lazy" decoding="async">
+            <div class="project-card-body">
+              <ul class="meta">
+                <li>Personal</li>
+                <li>2016</li>
+              </ul>
+              <h3>Get Alive</h3>
+              <p>Co-op horror concept for PlayStation Talents about surviving the nine circles of hell to be reborn.</p>
+              <div class="link-row">
+                <a class="button dark" href="https://www.youtube.com/watch?v=YhX2Tu8IMFg" target="_blank" rel="noopener">Trailer</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/portfolio/thumb_sleepless.png" alt="Sleepless: The First Encounter thumbnail." loading="lazy" decoding="async">
+            <div class="project-card-body">
+              <ul class="meta">
+                <li>Game jam</li>
+                <li>48 hours</li>
+              </ul>
+              <h3>Sleepless: The First Encounter</h3>
+              <p>Prototype built to test monster meshes, physics, and live-action narrative ideas under a 48-hour jam limit.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section class="page-section bg-primary text-white mb-0" id="about">
-        <div class="container">
-
-            <!-- About Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-white">About Me</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <!-- About Section Content -->
-            <div class="row">
-                <div class="col-lg-4 ml-auto">
-                    <p class="lead">I'm a game and software developer from Portugal with a huge passion for programming. I'm always looking for new challenges and always interested in learning new technologies!</p>
-                </div>
-                <div class="col-lg-4 mr-auto">
-                    <p class="lead">I started learning how to code when i was only 12 years old and since then my passion for coding only grew!</p>
-                </div>
-            </div>
-
+    <section class="section dark" id="archive">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Video archive</p>
+            <h2>Prototypes, trailers, tests, and oddities.</h2>
+          </div>
+          <p class="section-copy">
+            Trailers, prototype captures, tests, and work-in-progress footage gathered into one focused reel.
+          </p>
         </div>
+
+        <div class="video-grid">
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/dOdB_OXy3pI" title="Fábio Barbosa video archive 01" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/yyeLjSMu1kY" title="Fábio Barbosa video archive 02" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/ivEjubZjaX8" title="Fábio Barbosa video archive 03" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/pCZ0A-m65gE" title="Fábio Barbosa video archive 04" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/5SpAkjBjHGY" title="Fábio Barbosa video archive 05" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/7dVlCiRR7qQ" title="Fábio Barbosa video archive 06" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/gVKbfdqizIs" title="Fábio Barbosa video archive 07" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/dFXVFwpKA24" title="Fábio Barbosa video archive 08" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/y5MqY6N51MY" title="Fábio Barbosa video archive 09" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/VXOHV3KcniU" title="Fábio Barbosa video archive 10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/L1d2FL5zOsw" title="Fábio Barbosa video archive 11" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/x1axWFa4R9E" title="Fábio Barbosa video archive 12" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/Rzcc2w90_js" title="Fábio Barbosa video archive 13" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/C-3zRi-C1nA" title="Fábio Barbosa video archive 14" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="video-tile"><iframe loading="lazy" src="https://www.youtube.com/embed/Q-CSPGoQtEE" title="Fábio Barbosa video archive 15" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Experiences Section -->
-    <section class="page-section portfolio" id="resume">
-        <div class="container">
-
-            <!-- XP Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Résumé</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <!-- ED Section Content -->
-            <p><b>Education</b></p>
-            <div class="row">
-                <ul>
-                    <li>
-                        <a class="mb-5">
-                            Bachelor’s degree in Digital Game Design in Instituto Politécnico de Bragança, (2015 – 2018).
-                        </a>
-                    </li>
-					
-					<li>
-                        <a class="mb-5">
-                            Master’s degree in Engineering and Programming of Digital Games in Instituto Politécnico do Cavado e do Ave, (2020).
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Technical Skills Section Content -->
-            <p><b>Technical Skills</b></p>
-            <div class="row">
-                <ul>
-					<li>
-                        <a class="mb-5"><B>Fields</b></a>
-                    </li>
-					<ul>
-							<li>
-								<a class="mb-5">Gameplay</a>
-							</li>
-							<li>
-								<a class="mb-5">Scripting</a>
-							</li>
-
-							<li>
-								<a class="mb-5">AI</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">Networking</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">UI</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">3D Skinning</a>
-							</li>
-					</ul>
-					
-                    <li>
-                        <a class="mb-5"><b>Frameworks/Tools</b></a>
-                    </li>
-					<ul>
-							<li>
-								<a class="mb-5">WPF / WinForms</a>
-							</li>
-							<li>
-								<a class="mb-5">Git & Github / GitLab / BitBucket</a>
-							</li>
-
-							<li>
-								<a class="mb-5">Trello</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">Toggl</a>
-							</li>
-							
-						</ul>
-
-                    <li>
-                        <a class="mb-5"><b>Languages</b></a>
-                    </li>
-						<ul>
-							<li>
-								<a class="mb-5">C++</a>
-							</li>
-							<li>
-								<a class="mb-5">C#</a>
-							</li>
-
-							<li>
-								<a class="mb-5">Java</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">JavaScript</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">PHP</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">SQL</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">HTML5</a>
-							</li>
-						</ul>
-						
-						<li>
-                        <a class="mb-5"><b>Engines</b></a>
-						</li>
-						
-						<ul>
-							<li>
-								<a class="mb-5">Unity</a>
-							</li>
-							<li>
-								<a class="mb-5">Unreal 4</a>
-							</li>
-
-							<li>
-								<a class="mb-5">Gamemaker Studio</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">Creation Engine</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">PlayCanvas</a>
-							</li>
-							
-							<li>
-								<a class="mb-5">GoDot</a>
-							</li>
-						</ul>
-                </ul>
-					
-            </div>
-
-            <!-- XP Section Content -->
-            <p><b>Experience</b></p>
-            <div class="row">
-                <ul>
-                    <li>
-                        <a class="mb-5">Lead Programmer - Adamastor Studio, 2019-2021</a>
-                    </li>
-                    <li>
-                        <a class="mb-5">Game Director, Lead Programmer - Fire Raven Studios, 2021</a>
-                    </li>
-                </ul>
-            </div>
-
+    <section class="section" id="contact">
+      <div class="section-inner">
+        <div class="contact-band">
+          <div>
+            <p class="section-label">Contact</p>
+            <h2>See more work or get in touch.</h2>
+          </div>
+          <div class="socials" aria-label="Social links">
+            <a class="button dark" href="https://www.youtube.com/channel/UCw5yV6QB80HQo1E9qy-RBjw" target="_blank" rel="noopener">YouTube</a>
+            <a class="button light" href="https://twitter.com/deduti0n" target="_blank" rel="noopener">Twitter</a>
+            <a class="button light" href="https://www.linkedin.com/in/deduti0n/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button light" href="https://github.com/dedution" target="_blank" rel="noopener">GitHub</a>
+            <a class="button light" href="mailto:fabiobarbosa96@hotmail.com">Email</a>
+            <a class="button light" href="shared/CV_FabioBarbosa.pdf">Résumé</a>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Copyright Section -->
-    <section class="copyright py-4 text-center text-white">
-	 <div class="container">
-			<a href="https://www.youtube.com/channel/UCw5yV6QB80HQo1E9qy-RBjw" target="_blank"><img class="img-fluid" src="img/icon_Youtube.png" alt="" height="32" width="32"></a>
-			<a href="https://twitter.com/deduti0n" target="_blank"><img class="img-fluid" src="img/icon_Twitter.png" alt="" height="32" width="32"></a>
-			<a href="https://www.linkedin.com/in/deduti0n/" target="_blank"><img class="img-fluid" src="img/icon_LD.png" alt="" height="32" width="32"></a>
-        </div>
-			
-        <div class="container">
-            <small>Copyright &copy; Fabio Barbosa 2021</small>	
-        </div>
-    </section>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
+  <footer>
+    <div class="section-inner">
+      <span>© 2026 Fábio Barbosa. Selected games, tools, and prototypes.</span>
     </div>
-
-	<div class="portfolio-modal modal fade" id="portfolioModal_Sphere" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Project Sphere (2021)</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-								
-								<img class="img-fluid2 rounded mb-5" src="img/portfolio/sphere1.png" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/sphere2.png" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/sphere3.png" alt="">
-								
-                                <p class="mb-5">Multiplayer RPG inspired by Dark Souls. Set in a randomly generated dungeon filled with traps to avoid and boss fights to complete.</p>
-                                
-                                <button class="btn btn-primary" onclick="window.open('https://www.youtube.com/watch?v=7dVlCiRR7qQ');">
-                                    Teaser
-                                </button>
-                                
-                                <button class="btn btn-primary" onclick="window.open('https://www.youtube.com/watch?v=VXOHV3KcniU');">
-                                    Gameplay Prototype
-                                </button>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Vodafone Game -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Magia do Saber (2020)</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-								
-								<img class="img-fluid2 rounded mb-5" src="img/portfolio/art_magia3.png" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_magia1.png" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_magia2.png" alt="">
-								
-                                <p class="mb-5">Multiplayer party game. The game consists in a magic quizz show, where the players use their smartphones as controllers.</p>
-                                
-                                <button class="btn btn-primary" onclick="window.open('https://youtu.be/pCZ0A-m65gE');">
-                                    Trailer
-                                </button>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-	<!-- Portfolio Modal 0 -->
-    <div class="portfolio-modal modal fade" id="portfolioModalEvilBelow" tabindex="-1" role="dialog" aria-labelledby="portfolioModalEvilBelowLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">EVIL BELOW (2022)</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <!--<img class="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt="">-->
-                                <!-- Portfolio Modal - Text -->
-                               
-								<!-- Portfolio Modal - Image -->
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/eb_01.gif" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/eb_02.jpg" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/eb_03.jpg" alt="">
-								
-                                <p class="mb-5">
-                                    Winner of 3 PlayStation Awards for Best Game, Best Use of PlayStation Hardware and Accessibility. Evil Below brings a fresh take to the horror genre, allowing the player to freely explore a dangerous world filled with terrifing creatures and interact with innovative mechanics.
-									
-									<br><b>Releasing 2022 on PC, PS4, PS5</b></p>
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/dOdB_OXy3pI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								
-								<br>
-								<button class="btn btn-primary" onclick="window.open('https://store.steampowered.com/app/1444580/Evil_Below/');">
-                                    Check Out On Steam
-                                </button>
-								
-								<!--<button class="btn btn-primary" onclick="window.open('https://store.steampowered.com/app/1444580/Evil_Below/');">
-                                    Check Out On PlayStation Store
-                                </button>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Rise of The Fey (2017)</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <!--<img class="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt="">-->
-                                <!-- Portfolio Modal - Text -->
-                               
-								<!-- Portfolio Modal - Image -->
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_rise1.gif" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_rise2.gif" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_rise3.gif" alt="">
-								
-                                <p class="mb-5">
-                                    Third-person action-adventure RPG set within a fantasy world called Perrah.
-                                    This game was developed for my essay back in college.</p>
-								
-								<button class="btn btn-primary" onclick="window.open('https://www.youtube.com/watch?v=e4MO8QDNJP4');">
-                                    Check on Youtube
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Get Alive (2016)</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-								
-								<!-- Portfolio Modal - Image -->
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_getalive2.jpg" alt="">
-								<img class="img-fluid2 rounded mb-5" src="img/portfolio/art_getalive1.gif" alt="">
-								
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">
-                                    Get Alive is a horror experience that you can play coop. Both the players are given the task of surviving the dangers inside each of the nine circles of hell so they can be reborn.
-                                    Created as a concept for Playstation Talents.
-                                </p>
-                                
-								<button class="btn btn-primary" onclick="window.open('https://www.youtube.com/watch?v=YhX2Tu8IMFg');">
-                                    Check trailer
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Sleepless: The First Encounter</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-								<img class="img-fluid2 rounded mb-5" src="img/portfolio/thumb_sleepless.png" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_sleepless2.png" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_sleepless1.gif" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">
-                                    Developed under 48 hours for a gamejam.
-                                    Goal was to test out some monster meshes and physics and a mix of live action into the narrative.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal_stackMaster" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Stack Master</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_stackmaster1.jpg" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_stackmaster2.jpg" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_stackmaster3.jpg" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Stack as many blocks as you can without letting the stack fall or missing the target top block!</p>
-								<button class="btn btn-primary" onclick="window.open('https://play.google.com/store/apps/details?id=com.Barbosa.StackMaster');">
-                                    Play Store
-                                </button>
-								
-                            </div>
-                    </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Ocolast - Origens de Paulo Guina</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_ocolast2.jpg" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_ocolast1.gif" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_ocolast3.jpg" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Parody of the famous horror videogame Outlast.</p>
-								<button class="btn btn-primary" onclick="window.open('https://gamejolt.com/games/ocolast-origens-de-paulo-guina/48767');">
-                                    Play on GameJolt
-                                </button>
-								
-                            </div>
-                    </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Unity Grass Shader</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/thumb_grassShader.jpg" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_grassShader1.gif" alt="">
-
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">
-                                     Grass shader with vertex bending for dynamic character interaction. Made for the Unity engine.
-                                </p>
-								
-                                <button class="btn btn-primary" onclick="window.open('https://github.com/deduti0n/Unity-Grass-Bend');">
-                                    Open Github
-                                </button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	
-	<div class="portfolio-modal modal fade" id="portfolioModal6_onering" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6_onering" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">The One Ring Mod - For Elder Scrolls: Skyrim</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_oneRing1.jpg" alt="">
-                                <img class="img-fluid2 rounded mb-5" src="img/portfolio/art_oneRing2.jpg" alt="">
-
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">
-                                     As a big fan of Lord of The Rings and The Elder Scrolls franchise, i couldn't resist to make at least 1 mod using Bethesda's Creation Engine.
-									 It became one of the most viewed and downloaded Mod on Bethesda mods the month it released.
-                                </p>
-								
-                                <button class="btn btn-primary" onclick="window.open('https://bethesda.net/en/mods/skyrim/mod-detail/4057197');">
-                                    Check it on Bethesda Mods!
-                                </button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
-
+  </footer>
 </body>
 
 </html>
